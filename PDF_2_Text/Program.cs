@@ -17,7 +17,7 @@ namespace PDF_2_Text
             string OCRText = ExtractTextFromPdf(@"C:\Users\80056\Desktop\FileWatcher\Image_11866 (1).pdf");
             if (OCRText.Length > 0)
             {
-                //OCRText.Replace("\n\n", "\n");//removing toomany "\n"
+                OCRText.Replace("\n\n", "\n");//removing toomany "\n"
                 OCRText = OCRText.Replace("\n", Environment.NewLine) + Environment.NewLine;
             }
             System.IO.File.WriteAllText(@"C:\Users\80056\Desktop\FileWatcher\PDF1.txt", OCRText);
